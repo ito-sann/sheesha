@@ -21,26 +21,26 @@
   --gray-900: #0f172a;
   --line-green: #06c755;
   --line-green-hover: #05b04c;
-  
+
   /* Typography */
   --font-main: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
   --font-heading: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-  
+
   /* Spacing */
   --section-padding: 80px 0;
   --container-padding: 0 20px;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
-  
+
   /* Shadows */
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
+
   /* Border Radius */
   --radius-sm: 4px;
   --radius-md: 8px;
@@ -51,7 +51,9 @@
 /* ========================================
    Reset & Base Styles
    ======================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -88,29 +90,54 @@ a:hover {
   color: var(--primary-dark);
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
 /* ========================================
    Typography
    ======================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.4;
   color: var(--gray-900);
 }
 
-h1 { font-size: 2.5rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.25rem; }
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
 
 @media (max-width: 768px) {
-  h1 { font-size: 1.875rem; }
-  h2 { font-size: 1.5rem; }
-  h3 { font-size: 1.25rem; }
+  h1 {
+    font-size: 1.875rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
 }
 
 /* ========================================
@@ -261,7 +288,7 @@ h4 { font-size: 1.25rem; }
   .menu-toggle {
     display: flex;
   }
-  
+
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -278,21 +305,21 @@ h4 { font-size: 1.25rem; }
     visibility: hidden;
     transition: all var(--transition-normal);
   }
-  
+
   .nav-menu.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  
+
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
+
   .menu-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
@@ -306,7 +333,14 @@ h4 { font-size: 1.25rem; }
   display: flex;
   align-items: center;
   position: relative;
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  /* Original background - uncomment to revert */
+  /* background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%); */
+
+  /* New background with image - comment out to revert */
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.9) 0%, rgba(37, 99, 235, 0.85) 50%, rgba(59, 130, 246, 0.8) 100%), url('../images/hero-bg-2.jpg');
+  background-size: cover;
+  background-position: center;
+
   overflow: hidden;
 }
 
@@ -375,7 +409,7 @@ h4 { font-size: 1.25rem; }
   .hero-title {
     font-size: 2rem;
   }
-  
+
   .hero-subtitle {
     font-size: 1rem;
   }
@@ -558,6 +592,16 @@ h4 { font-size: 1.25rem; }
   overflow: hidden;
 }
 
+.about-profile-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  display: block;
+  margin: 0 auto;
+}
+
 .about-image-placeholder::after {
   content: '';
   position: absolute;
@@ -707,12 +751,13 @@ h4 { font-size: 1.25rem; }
 }
 
 @media (max-width: 600px) {
+
   .pricing-table th,
   .pricing-table td {
     padding: 16px;
     font-size: 0.875rem;
   }
-  
+
   .price-value {
     font-size: 1rem;
   }
@@ -918,12 +963,12 @@ h4 { font-size: 1.25rem; }
     width: 56px;
     height: 56px;
   }
-  
+
   .line-fab svg {
     width: 32px;
     height: 32px;
   }
-  
+
   .line-fab-tooltip {
     display: none;
   }
@@ -982,8 +1027,15 @@ h4 { font-size: 1.25rem; }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .floating {
@@ -993,8 +1045,22 @@ h4 { font-size: 1.25rem; }
 /* ========================================
    Utility Classes
    ======================================== */
-.text-center { text-align: center; }
-.text-primary { color: var(--primary); }
-.text-gold { color: var(--accent-gold); }
-.mt-30 { margin-top: 30px; }
-.mb-30 { margin-bottom: 30px; }
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
